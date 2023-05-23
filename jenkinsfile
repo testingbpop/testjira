@@ -10,7 +10,7 @@ node (''){
     try {
         construccion()
         echo '***********************'
-        build()
+        deploy()
     }  
     catch(caughtError) {
         echo 'hola'
