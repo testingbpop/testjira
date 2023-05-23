@@ -1,0 +1,24 @@
+#!/usr/bin/env groovy
+
+node (''){
+
+    def error = null
+    def registry = null
+    def configDeploy =null
+    def branchedVersion = null
+
+    try {
+        Build()
+    }  
+    catch(caughtError) {
+        echo 'hola'
+    }
+
+    finally {
+        echo 'se termino, no va mas'
+    }
+}
+
+def Build(){
+ echo "Building....."
+}
