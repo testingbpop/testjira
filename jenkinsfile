@@ -9,6 +9,8 @@ node (''){
 
     try {
         construccion()
+        echo '***********************'
+        build()
     }  
     catch(caughtError) {
         echo 'hola'
