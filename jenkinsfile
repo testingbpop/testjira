@@ -9,18 +9,18 @@ pipeline {
                  always {
                      //jiraSendBuildInfo site: 'testbpop.atlassian.net', branch: 'TEST-123-awesome-feature'
                      //jiraSendBuildInfo branch: 'PRUEB-1', site: 'testbpop.atlassian.net'
-                     echo "post numero 1"
+                     echo "post numero 1....."
                  }
              }
          }
         stage('Deploy to Production') {
             steps {
-                echo 'Deploying to Production from master...'
+                echo 'Deploying to Production from master.......'
             }
             post {
                 always {
                     //jiraSendDeploymentInfo environmentId: 'us-prod-1', environmentName: 'us-prod-1', environmentType: 'production'
-                    echo "post numero 2"
+                    echo "post numero 2....."
                 }
             }
      }
