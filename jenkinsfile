@@ -2,8 +2,12 @@ node {
     stage('Build'){
         echo "Building....."
     }
-    jiraSendBuildInfo branch: 'PRUEB-2', site: 'testbpop.atlassian.net'
-    stage('deploy to x'){
+    post {
+       always {
+           jiraSendBuildInfo branch: 'PRUEB-2', site: 'testbpop.atlassian.net'
+       }
+   }
+   stage('deploy to x'){
         echo "Deploying....."
     }
 }
