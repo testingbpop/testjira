@@ -8,7 +8,7 @@ node (''){
     def branchedVersion = null
 
     try {
-        Build()
+        construccion()
     }  
     catch(caughtError) {
         echo 'hola'
@@ -19,6 +19,14 @@ node (''){
     }
 }
 
-def Build(){
- echo "Building....."
+def construccion(){
+    stage('Build'){
+        echo "Building....."
+    }
+}
+
+def deploy(){
+    stage('deploy to x'){
+        echo "Deploying....."
+    }
 }
