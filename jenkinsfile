@@ -1,36 +1,7 @@
-#!/usr/bin/env groovy
-
-node (''){
-
-    def error = null
-    def registry = null
-    def configDeploy =null
-    def branchedVersion = null
-
-    try {
-        stage('Build'){
-        echo "Building....."
-        }
-        stage('deploy to x'){
-        echo "Deploying....."
-        }
-    }  
-    catch(caughtError) {
-        echo 'hola'
-    }
-
-    finally {
-        echo 'se termino, no va mas'
-    }
-}
-
-def construccion(){
+node {
     stage('Build'){
         echo "Building....."
     }
-}
-
-def deploy(){
     stage('deploy to x'){
         echo "Deploying....."
     }
