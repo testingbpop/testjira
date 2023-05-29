@@ -1,13 +1,26 @@
 node {
-    stage('Build'){
-        echo "Building....."
+    stage('Build') {
+        sh 'echo "Building......"'
     }
-    post {
-       always {
-           jiraSendBuildInfo branch: 'PRUEB-2', site: 'testbpop.atlassian.net'
-       }
-   }
-   stage('deploy to x'){
+    
+    stage('deploy to x'){
         echo "Deploying....."
+    }
+    
+    stage('Post-Build') {
+        try {
+            sh 'echo "Esto es un script personalizado"'
+            bat 'echo "Esto es otro script personalizado"'
+
+        } catch (Exception e) {
+            // Manejo de excepciones, si es necesario
+            // ...
+            // ...
+        } finally {
+            // Acciones a ejecutar siempre, independientemente del resultado de la construcción
+            // ...
+            // ...
+            jiraSendBuildInfo branch: 'PRUEB-2', site: 'testbpop.atlassian.net'
+        }
     }
 }
