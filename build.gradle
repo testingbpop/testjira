@@ -32,3 +32,15 @@ wrapper {
     gradleVersion = "7.3.3"
     distributionType = Wrapper.DistributionType.ALL
 }
+
+plugins {
+  id "org.sonarqube" version "4.1.0.3113"
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "testingbpop_testjira"
+    property "sonar.organization", "testingbpop"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+}
